@@ -4,13 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\Hash; // ✅ এটা যোগ করতে হবে
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         User::factory()->create([
@@ -18,7 +15,7 @@ class UserSeeder extends Seeder
             'email'=>'admin@gmail.com',
             'role'=>'admin',
             'status'=>'active',
-            'password'=>Hash::make('12345')
+            'password'=> Hash::make('12345'),
         ]);
 
         User::factory()->create([
@@ -26,7 +23,7 @@ class UserSeeder extends Seeder
             'email'=>'vendor@gmail.com',
             'role'=>'vendor',
             'status'=>'active',
-            'password'=>Hash::make('12345')
+            'password'=> Hash::make('12345'),
         ]);
 
         User::factory()->create([
@@ -34,7 +31,7 @@ class UserSeeder extends Seeder
             'email'=>'customer@gmail.com',
             'role'=>'customer',
             'status'=>'active',
-            'password'=>Hash::make('12345')
+            'password'=> Hash::make('12345'),
         ]);
 
         User::factory()->create([
@@ -42,7 +39,7 @@ class UserSeeder extends Seeder
             'email'=>'rider@gmail.com',
             'role'=>'rider',
             'status'=>'active',
-            'password'=>Hash::make('12345')
+            'password'=> Hash::make('12345'),
         ]);
     }
 }
